@@ -5,6 +5,7 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <UserSecretsId>3b7c5b39-9158-4b98-8236-19bdd019c495</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <StartupObject>WebApplication1.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

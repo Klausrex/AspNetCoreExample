@@ -6,24 +6,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication1.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        private List<int> values;
-
-        ValuesController()
-        {
-            values = new List<int>();
-        }
-
         // GET api/GetLastAndAddNextToList
-        [HttpGet]
-        public int GetLastAndAddNextToList()
+        [HttpGet("getlast")]
+        public ActionResult<string> GetLastAndAddNextToList()
         {
-            var last = values.Last();
-            values.Add(last++);
-            return last;
+            var last = Globals.values.Last();
+            Globals.values.Add(++last);
+            return last.ToString();
         }
     }
 }
