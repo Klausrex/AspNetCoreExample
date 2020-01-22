@@ -14,6 +14,7 @@ namespace WebApplication1.Controllers
         [HttpGet("getlast")]
         public ActionResult<string> GetLastAndAddNextToList()
         {
+            System.Threading.Thread.Sleep(200);
             var last = Globals.values.Last();
             Globals.values.Add(++last);
             return last.ToString();
