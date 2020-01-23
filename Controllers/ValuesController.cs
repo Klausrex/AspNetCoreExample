@@ -10,7 +10,7 @@ namespace WebApplication1.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        [HttpGet]
+        [HttpGet("next")]
         public ActionResult<string> Next()
         {
             System.Threading.Thread.Sleep(200);
