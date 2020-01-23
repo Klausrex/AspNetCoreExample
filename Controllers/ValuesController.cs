@@ -13,7 +13,12 @@ namespace WebApplication1.Controllers
         [HttpGet("next")]
         public ActionResult<string> Next()
         {
-            System.Threading.Thread.Sleep(2000);
+            //System.Threading.Thread.Sleep(2000);
+            
+            // "Busy waiting"
+            double d = 1.0;
+            for (int i = 0; i < 100000; i++)
+                d += 1.0 / (double)i;
             var last = Globals.values.Last();
             Globals.values.Add(++last);
             return last.ToString();
