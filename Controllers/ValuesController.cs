@@ -22,7 +22,7 @@ namespace WebApplication1.Controllers
             var last = Globals.values.Last();
             var next = last + (int)d;
             Globals.values.Add(next);
-            return values.Count.ToString();
+            return Globals.values.Count.ToString();
         }
     }
 }
