@@ -10,9 +10,8 @@ namespace WebApplication1.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        // GET api/GetLastAndAddNextToList
-        [HttpGet("getlast")]
-        public ActionResult<string> GetLastAndAddNextToList()
+        [HttpGet]
+        public ActionResult<string> Next()
         {
             System.Threading.Thread.Sleep(200);
             var last = Globals.values.Last();
