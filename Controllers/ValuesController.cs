@@ -20,7 +20,8 @@ namespace WebApplication1.Controllers
             for (int i = 0; i < 100000; i++)
                 d += 1.0 / (double)i;
             var last = Globals.values.Last();
-            Globals.values.Add(++last);
+            var next = last + (int)d;
+            Globals.values.Add(next);
             return last.ToString();
         }
     }
