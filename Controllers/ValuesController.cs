@@ -13,7 +13,6 @@ namespace WebApplication1.Controllers
         [HttpGet("next")]
         public ActionResult<string> Next()
         {
-            //System.Threading.Thread.Sleep(2000);
             BusyWait(TimeSpan.FromSeconds(4));
             
             Globals.values.Add(Globals.values.Last() + 1);
@@ -23,7 +22,6 @@ namespace WebApplication1.Controllers
         private void BusyWait(TimeSpan duration)
         {
             var start = DateTime.Now;
-
             while (start + duration > DateTime.Now)
                 ;
         }
