@@ -7,6 +7,6 @@ namespace WebApplication1
 {
     static class Globals
     {
-        static volatile public List<int> values = new List<int>() { 0 };
+        static public List<int> values = new List<int>() { 0 };
     }
 }
