@@ -16,9 +16,7 @@ namespace WebApplication1.Controllers
             //System.Threading.Thread.Sleep(2000);
             BusyWait(TimeSpan.FromSeconds(4));
             
-            var last = Globals.values.Last();
-            var next = last + (int)d;
-            Globals.values.Add(next);
+            Globals.values.Add(Globals.values.Last() + 1);
             return Globals.values.Count.ToString();
         }
         
