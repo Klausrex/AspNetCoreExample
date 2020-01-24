@@ -14,7 +14,7 @@ namespace WebApplication1.Controllers
         public ActionResult<string> Next()
         {
             //System.Threading.Thread.Sleep(2000);
-            BusyWait(1000);
+            BusyWait(TimeSpan.FromSeconds(4));
             
             var last = Globals.values.Last();
             var next = last + (int)d;
@@ -22,6 +22,12 @@ namespace WebApplication1.Controllers
             return Globals.values.Count.ToString();
         }
         
-        private BusyWait(
+        private void BusyWait(TimeSpan duration)
+        {
+            var start = DateTime.Now;
+
+            while (start + duration > DateTime.Now)
+                ;
+        }
     }
 }
