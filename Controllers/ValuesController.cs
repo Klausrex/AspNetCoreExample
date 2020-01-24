@@ -14,15 +14,14 @@ namespace WebApplication1.Controllers
         public ActionResult<string> Next()
         {
             //System.Threading.Thread.Sleep(2000);
+            BusyWait(1000);
             
-            // "Busy waiting"
-            double d = 1.0;
-            for (int i = 0; i < 100000; i++)
-                d += 1.0 / (double)i;
             var last = Globals.values.Last();
             var next = last + (int)d;
             Globals.values.Add(next);
             return Globals.values.Count.ToString();
         }
+        
+        private BusyWait(
     }
 }
