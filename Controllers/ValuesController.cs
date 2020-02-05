@@ -16,7 +16,7 @@ namespace WebApplication1.Controllers
             BusyWait(TimeSpan.FromSeconds(4));
             
             Globals.values.Add(Globals.values.Last() + 10);
-            return Globals.values.Last();
+            return Globals.values.Last().ToString();
         }
         
         private void BusyWait(TimeSpan duration)
